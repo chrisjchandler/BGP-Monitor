@@ -1,0 +1,6 @@
+{% if error %}
+<p>{{ error }}</p>
+{% else %}
+<p>Current routing information:</p>
+{{ prefixes|safe }}
+{% endif %}
