@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BGP Monitor</title>
+</head>
+<body>
+  <h1>BGP Monitor</h1>
+  <form method="post">
+    <label for="asn">Enter a BGP ASN:</label>
+    <input type="text" name="asn">
+    <input type="submit" value="Submit">
+  </form>
+  {% if routing_info %}
+  <h2>Current routing information for {{ asn }}</h2>
+  <ul>
+    {% for prefix in routing_info %}
+    <li>{{ prefix }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</body>
+</html>
+
